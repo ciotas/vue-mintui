@@ -8,6 +8,7 @@ import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
 import Mint from 'mint-ui';
 
+
 //模块
 import store from './api/store' // 引入接口模块
 import router from './router' // 引用路由
