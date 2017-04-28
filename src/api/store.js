@@ -26,27 +26,27 @@ const mutations = {
 }
 const actions = {
     getTodos(store){
-        Vue.axios.get('http://localhost:8000/api/tasks').then((response) => {
+        Vue.axios.get('http://laravel.dev/api/tasks').then((response) => {
             console.log(response.data)
             store.commit('get_todo_list',response.data);
         })
     },
     completeTodo(store,todo){
-        Vue.axios.patch('http://localhost:8000/api/tasks/'+todo.id+'/compete').then((response)=>{
+        Vue.axios.patch('http://laravel.dev/api/tasks/'+todo.id+'/compete').then((response)=>{
             console.log(response.data)
             store.commit('complete_todo',todo);
         });
     },
     deleteTodo(store,{todo,index}){
 
-        Vue.axios.delete('http://localhost:8000/api/tasks/'+todo.id+'/delete').then((response)=>{
+        Vue.axios.delete('http://laravel.dev/api/tasks/'+todo.id+'/delete').then((response)=>{
             // console.log(response.data)
             console.log(index)
             store.commit('delete_todo',index);
         });
     },
     addTodo(store,todo){
-        Vue.axios.post('http://localhost:8000/api/tasks/create',{title:todo.title}).then((response)=>{
+        Vue.axios.post('http://laravel.dev/api/tasks/create',{title:todo.title}).then((response)=>{
             console.log(response.data)
             store.commit('add_todo',response.data);
         });

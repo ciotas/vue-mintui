@@ -40,7 +40,7 @@
               this.error = this.todo = null
               this.loading = true
               // replace getPost with your data fetching util / API wrapper
-              this.axios.get('http://localhost:8000/api/tasks/'+ this.$route.params.id).then((response) => {
+              this.axios.get('http://laravel.dev/api/tasks/'+ this.$route.params.id).then((response) => {
                 this.loading = false
                 console.log(response.data)
                 this.todo = response.data

@@ -11,7 +11,7 @@
 export default {
   name: 'app',
   mounted(){
-    this.$store.dispatch('getTodos');
+    this.$store.dispatch('getTodos');//获取第一个页面的数据
   },
   computed:{
       todosCount:function () {
